@@ -1,20 +1,20 @@
 %define upstream_name    Text-Table
 %define upstream_version 1.123
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
-Summary:    Organize Data in Tables
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Organize Data in Tables
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Test::More)
-BuildRequires: perl(Text::Aligner)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Text::Aligner)
+BuildArch:	noarch
 
 %description
 Organization of data in table form is a time-honored and useful method of
@@ -41,24 +41,42 @@ Table Creation
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes LICENSE META.yml README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Mon Jun 13 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.123.0-1mdv2011.0
++ Revision: 684827
+- update to new version 1.123
+
+* Tue May 31 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.121.0-1
++ Revision: 682199
+- update to new version 1.121
+
+* Sun May 15 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.120.0-1
++ Revision: 674850
+- update to new version 1.120
+
+* Mon May 09 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.118.0-1
++ Revision: 672880
+- update to new version 1.118
+
+* Sat Apr 23 2011 Shlomi Fish <shlomif@mandriva.org> 1.117.0-1
++ Revision: 656774
+- Upgraded to Text-Table-1.117
+
+* Sun Sep 19 2010 Shlomi Fish <shlomif@mandriva.org> 1.116.0-1mdv2011.0
++ Revision: 579823
+- import perl-Text-Table
 
