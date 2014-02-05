@@ -1,15 +1,15 @@
 %define upstream_name    Text-Table
-%define upstream_version 1.123
+%define upstream_version 1.129
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	Organize Data in Tables
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Text/Text-Table-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Test::More)
@@ -79,4 +79,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Sun Sep 19 2010 Shlomi Fish <shlomif@mandriva.org> 1.116.0-1mdv2011.0
 + Revision: 579823
 - import perl-Text-Table
+
 
