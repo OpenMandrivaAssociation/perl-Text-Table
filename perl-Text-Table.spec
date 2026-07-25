@@ -1,16 +1,16 @@
 %define upstream_name    Text-Table
-%define upstream_version 1.130
+%define upstream_version 1.135
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Organize Data in Tables
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Text/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/shlomif/Text-Table
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Text-Table-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
