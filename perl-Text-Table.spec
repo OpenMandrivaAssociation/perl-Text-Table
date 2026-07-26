@@ -1,16 +1,14 @@
 %define upstream_name    Text-Table
-%define upstream_version 1.135
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.135
+Release:	2
 
 Summary:	Organize Data in Tables
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/shlomif/Text-Table
-Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Text-Table-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Text-Table-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -40,7 +38,7 @@ Table Creation
     The number of columns is taken fronm the first line of data.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
